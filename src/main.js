@@ -8,3 +8,8 @@ const client = new Client()
 
 export const databases = new Databases( client );
 
+
+// set credit in footer
+const currentYear = new Date().getFullYear();
+let credit = document.getElementById("credits");
+credit.innerHTML = `&copy ${currentYear}`;
