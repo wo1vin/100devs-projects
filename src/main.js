@@ -37,6 +37,6 @@ addProjectBtn.addEventListener('click', () => {
 });
 
 // set credit in footer
-const currentYear = new Date().getFullYear();
-let credit = document.getElementById("credits");
-credit.innerHTML = `&copy ${currentYear}`;
+// const currentYear = new Date().getFullYear();
+// let credit = document.getElementById("credits");
+// credit.innerHTML = `&copy ${currentYear}`;
