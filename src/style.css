@@ -50,8 +50,10 @@ h1 {
   text-align: center;
 }
 
-p{
-  padding: 20px;
+#info{
+  padding: 1.25em 3em;
+  margin: 2em 0;
+  color: #fff;
   background-color: #213547;
 }
 #app {
