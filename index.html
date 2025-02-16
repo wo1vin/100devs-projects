@@ -2,40 +2,52 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/code-light.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>100Devs Projects</title>
   </head>
   <body>
-    <!-- add project form -->
-    <form action="" id="project-form">
-      <label for="projectName">Project name</label>
-      <input type="text" name="projectName" placeholder="Project Name">
-      <label for="projecLink">Link to project</label>
-      <input type="url" name="projectLink">
-      <label for="githubLink">Link to repository</label>
-      <input type="url" name="githubLink">
-      <label for="description">Project description</label>
-      <textarea name="description" placeholder="Describe your project"></textarea>
-      <!-- value is split into array before sending to DB -->
-      <label for="stack">Technology / Languages used</label>
-      <input type="text" name="stack" placeholder="JS, Node, React...">
-      <!-- value is split into array before sending to DB -->
-      <label for="contributors">Contributors</label>
-      <input type="text" name="contributors" placeholder="Discord names">
+    <header>Welcome to 100devs Projects</header>
+    <h1>This a simple app where you can add and check out projects built by members of 100Devs</h1>
+    <p>The inspiration for this project came from wanting to use tools excusively created by people in the 100Devs community as a way to show support and give each other feedback.</p>
+    <!-- project form -->
+    <div id="addProject">
+      <h3>Add your project to the repo</h3>
+      <form action="" id="project-form">
+        <label for="projectName">Project name</label>
+        <input type="text" name="projectName" placeholder="Project Name">
+        <label for="projecLink">Link to project</label>
+        <input type="url" name="projectLink">
+        <label for="githubLink">Link to repository</label>
+        <input type="url" name="githubLink">
+        <label for="description">Project description</label>
+        <textarea name="description" placeholder="Describe your project"></textarea>
+        <!-- value is split into array before sending to DB -->
+        <label for="stack">Technology / Languages used</label>
+        <input type="text" name="stack" placeholder="JS, Node, React...">
+        <!-- value is split into array before sending to DB -->
+        <label for="contributors">Contributors</label>
+        <input type="text" name="contributors" placeholder="Discord names">
 
-      <label for="projectType">Type of project</label>
-      <div>
-        <label><input type="checkbox" name="projectType" value="portfolio">Portfolio site</label><br>
-        <label><input type="checkbox" name="projectType" value="business">Business page</label><br>
-        <label><input type="checkbox" name="projectType" value="tool">Tool</label><br>
-        <label><input type="checkbox" name="projectType" value="fun">Fun</label><br>
-        <label><input type="checkbox" name="projectType" value="other" id="otherCheckbox">Other</label>
-        <input type="text" name="projectType" id="otherText" style="display:none" placeholder="Enter type of project">
-      </div>
+        <label for="projectType">Type of project</label>
+        <div>
+          <label><input type="checkbox" name="projectType" value="portfolio">  Portfolio site</label><br>
+          <label><input type="checkbox" name="projectType" value="business">  Business page</label><br>
+          <label><input type="checkbox" name="projectType" value="tool">   Tool</label><br>
+          <label><input type="checkbox" name="projectType" value="fun"> Fun</label><br>
+          <label><input type="checkbox" name="projectType" value="other" id="otherCheckbox">  Other</label>
+          <input type="text" name="projectType" id="otherText" style="display:none" placeholder="Enter type of project">
+        </div>
 
-      <input type="submit" id="projectSubmit" value="submit">
-    </form>
+        <input type="submit" id="projectSubmit" value="submit">
+      </form>
+    </div>
+
+    <footer>
+      <a href="https://wo1vin.github.io/delmonte/">"Scar" Denisse Del Monte</a>
+      <span id="credits"></span>
+    </footer>
+
     <script type="module" src="/src/main.js"></script>
     <script type="module" src="/src/projectForm.js"></script>
   </body>
