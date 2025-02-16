@@ -27,10 +27,12 @@ Contact me on Discord if you want access to the database. Otherwise, you will ne
         `git clone git@github.com:wo1vin/100devs-projects.git`
         `git install`
 3. Create a .env file and the environment variables with the IDs from the Appwrite CLI:
-    `# Appwrite creds`
-    `VITE_PROJECT_ID = ""`
-    `VITE_DB_ID = ""`
-    `VITE_PRODUCTS_ID = ""`
+```
+# Appwrite creds
+VITE_PROJECT_ID = ""
+VITE_DB_ID = ""
+VITE_PRODUCTS_ID = ""
+```
 4. Code.
 5. Push the changes to your remote repo.
 6. Create a pull request detailing the changes that you made.
