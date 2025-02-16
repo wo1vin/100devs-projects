@@ -11,8 +11,12 @@ async function addProjectsToDom(){
     import.meta.env.VITE_DB_ID,
     import.meta.env.VITE_PRODUCTS_ID
   );
-  console.log(data.documents)
-
+  // console.log(data.documents)
+  data.documents.forEach(project => {
+    const li = document.createElement('li')
+    li.textContent = `${project['project-name']}`
+    document.getElementById('projectList').appendChild(li);
+  })
 };
 addProjectsToDom();
 
