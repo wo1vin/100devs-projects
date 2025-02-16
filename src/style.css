@@ -13,6 +13,19 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  color: #1a1a1a;
+}
+li{
+  padding: 0 5px;
+}
+#info,#addProject{
+  display: none;
+}
 a {
   font-weight: 500;
   color: #646cff;
@@ -33,7 +46,7 @@ body,footer {
 footer{
   width: 100%;
   min-height:fit-content;
-  padding: 20px;
+  padding: 20px 0;
 }
 
 header{
@@ -52,7 +65,6 @@ h1 {
 
 #info{
   padding: 1.25em 3em;
-  margin: 2em 0;
   color: #fff;
   background-color: #213547;
 }
