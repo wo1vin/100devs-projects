@@ -23,12 +23,14 @@ Users can add projects to the database and browse through what others have creat
 Contact me on Discord if you want access to the database. Otherwise, you will need your own Appwrite account, database, and collections.
 1. Create an issue on this repository describing the contribution that you would like to make.
 2. Fork this repo and clone it to your local machine.
-    Terminal instructions:
-        `git clone git@github.com:wo1vin/100devs-projects.git`
-        `git install`
+Terminal instructions:
+```
+git clone git@github.com:wo1vin/100devs-projects.git
+git install
+```
 3. Create a .env file and the environment variables with the IDs from the Appwrite CLI:
 ```
-# Appwrite creds
+# Appwrite credentials
 VITE_PROJECT_ID = ""
 VITE_DB_ID = ""
 VITE_PRODUCTS_ID = ""
