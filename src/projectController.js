@@ -2,7 +2,7 @@
 import { ID } from "appwrite";
 import { databases } from "./main";
 
-// This file provides the functionality for handling data to and from the products collection
+// This file provides the functionality for handling data to and from the projects collection
 
 // PROJECT LIST
 async function addProjectsToDom(){
@@ -14,7 +14,7 @@ async function addProjectsToDom(){
   // GET projects
   let data = await databases.listDocuments(
     import.meta.env.VITE_DB_ID,
-    import.meta.env.VITE_PRODUCTS_ID
+    import.meta.env.VITE_PROJECTS_COL_ID
   );
   // create an li for each document and add it to the project list ul
   data.documents.forEach(project => {
@@ -74,7 +74,7 @@ function addProject(e){
     console.log(e.target)
     const project = databases.createDocument(
     import.meta.env.VITE_DB_ID,
-    import.meta.env.VITE_PRODUCTS_ID,
+    import.meta.env.VITE_PROJECTS_COL_ID,
     ID.unique(),{ 
         "project-name": e.target.projectName.value,
         "date-added": new Date().toLocaleDateString(),
