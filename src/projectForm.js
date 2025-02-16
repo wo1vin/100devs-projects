@@ -9,7 +9,7 @@ const form = document.getElementById('project-form');
 
         getCheckboxValues()
         addJob(e)
-
+        form.reset()
     });
 
 // When the checkbox is checked, show the text input. otherwise, hide it. 
@@ -57,8 +57,7 @@ function addJob(e){
         "github-link": e.target.githubLink.value,
         "description":e.target.description.value,
         "stack": splitByCommas(e.target.stack.value),
-        // should be array, must check db attributes, then edit projectType var
-        "type-of-project":projectType,
+        "type-of-project": splitByCommas(projectType),
         "contributors": splitByCommas(e.target.contributors.value)
     });
 
