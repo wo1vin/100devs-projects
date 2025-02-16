@@ -5,17 +5,22 @@ import { databases } from "./main";
 // This file provides the functionality for handling data to and from the products collection
 
 // PROJECT LIST
-// GET projects
 async function addProjectsToDom(){
+
+  // clear out the DOM so that it fetches an accurate list
+  const projectList = document.getElementById('projectList');
+  projectList.innerHTML = "";
+
+  // GET projects
   let data = await databases.listDocuments(
     import.meta.env.VITE_DB_ID,
     import.meta.env.VITE_PRODUCTS_ID
   );
-  // console.log(data.documents)
+  // create an li for each document and add it to the project list ul
   data.documents.forEach(project => {
     const li = document.createElement('li')
     li.textContent = `${project['project-name']}`
-    document.getElementById('projectList').appendChild(li);
+    projectList.appendChild(li);
   })
 };
 addProjectsToDom();
@@ -27,7 +32,7 @@ const form = document.getElementById('project-form');
         e.preventDefault(); 
 
         getCheckboxValues()
-        addJob(e)
+        addProject(e)
         form.reset()
     });
 
@@ -63,10 +68,11 @@ function getCheckboxValues(){
 };
 
 // POST project to DB
-function addJob(e){
+// if a new project has been submitted, the DOM should be updated
+function addProject(e){
     //create new project
     console.log(e.target)
-    const promise = databases.createDocument(
+    const project = databases.createDocument(
     import.meta.env.VITE_DB_ID,
     import.meta.env.VITE_PRODUCTS_ID,
     ID.unique(),{ 
@@ -79,7 +85,8 @@ function addJob(e){
         "type-of-project": splitByCommas(projectType),
         "contributors": splitByCommas(e.target.contributors.value)
     })
-    promise.then (function(response) {
+    project.then (function(response) {
+      addProjectsToDom()
       console.log(response);
     }, function(err) {
       console.log(err);
