@@ -2,7 +2,22 @@
 import { ID } from "appwrite";
 import { databases } from "./main";
 
-// create event listener for product form
+// This file provides the functionality for handling data to and from the products collection
+
+// PROJECT LIST
+// GET projects
+async function addProjectsToDom(){
+  let data = await databases.listDocuments(
+    import.meta.env.VITE_DB_ID,
+    import.meta.env.VITE_PRODUCTS_ID
+  );
+  console.log(data.documents)
+
+};
+addProjectsToDom();
+
+// PROJECT FORM
+// create event listener for project form
 const form = document.getElementById('project-form'); 
     form.addEventListener('submit', function(e){
         e.preventDefault(); 
@@ -43,7 +58,7 @@ function getCheckboxValues(){
   projectType = selectedOptions.join(","); 
 };
 
-// addJob to DB
+// POST project to DB
 function addJob(e){
     //create new project
     console.log(e.target)
@@ -59,8 +74,7 @@ function addJob(e){
         "stack": splitByCommas(e.target.stack.value),
         "type-of-project": splitByCommas(projectType),
         "contributors": splitByCommas(e.target.contributors.value)
-    });
-
+    })
     promise.then (function(response) {
       console.log(response);
     }, function(err) {
@@ -73,4 +87,3 @@ function splitByCommas(string){
   const arr = string.split(",").map(x=>x.trim());
   return arr;
 }
-
