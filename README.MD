@@ -37,7 +37,7 @@ git install
 # Appwrite credentials
 VITE_PROJECT_ID = ""
 VITE_DB_ID = ""
-VITE_PRODUCTS_ID = ""
+VITE_PROJECTS_COL_ID = ""
 ```
 4. Code.
 5. Push the changes to your remote repo.
