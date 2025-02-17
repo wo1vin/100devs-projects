@@ -20,7 +20,7 @@ Users can add projects to the database and browse through what others have creat
     - Pull data directly from their github 
     - Authenticate users
     - Delete or update submissions
-- Load lists of tech and languages to make form input easier
+- Tag system for user input to load lists of tech and languages to make form input easier.
 - Add attribute for projects that are requesting collaborators
 
 ## How to contribute
