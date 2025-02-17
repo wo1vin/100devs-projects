@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>100Devs Projects</title>
   </head>
+
   <body>
+    <!-- HEADER -->
     <header>
       <title>100Devs Projects</title>
       <h1>Discover and Contribute to Projects Built by the 100Devs Community</h1>
@@ -16,6 +18,7 @@
       <button id="addProjectBtn" type="button">Add a project</button>
     </nav>
 
+    <!-- ABOUT -->
     <div id="info">
       <h3>About this project</h3>
       <p>Explore a web app designed to showcase and celebrate the creativity of 100Devs members. Add your own projects, browse innovative creations from the community, and connect with fellow developers to share feedback and support.</p>
@@ -25,18 +28,21 @@
       <a href="https://github.com/wo1vin/100devs-projects" target="_blank">Project repo</a>
     </div>
 
-    <!-- project form -->
+    <!-- PROJECT FORM -->
     <div id="addProject">
       <h3>Add a project to the repo</h3>
       <form action="" id="project-form">
+
         <label for="projectName">Project name</label>
         <input type="text" name="projectName" placeholder="Project Name" required>
+        <label for="description">Project description</label>
+        <textarea name="description" placeholder="Describe your project"></textarea>
+
         <label for="projecLink">Link to project</label>
         <input type="url" name="projectLink" placeholder="https://myproject.netlify.app">
         <label for="githubLink">Link to repository</label>
         <input type="url" name="githubLink" placeholder="https://github.com/myusername/myproject" required>
-        <label for="description">Project description</label>
-        <textarea name="description" placeholder="Describe your project"></textarea>
+        
         <!-- value is split into array before sending to DB -->
         <label for="stack">Technology / Languages used</label>
         <input type="text" name="stack" placeholder="JS, Node, React...">

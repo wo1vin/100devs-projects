@@ -218,6 +218,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* LIGHT MODE */ 
 @media (prefers-color-scheme: light) {
   :root {
     color: var(--navy);
@@ -237,6 +238,8 @@ button:focus-visible {
     color: white;
   }
 }
+
+/* RESPONSIVENESS QUERIES */
 @media screen and (min-width: 425px) {
   header{
     margin: 3em 1em 1em;
