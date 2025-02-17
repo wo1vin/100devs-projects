@@ -18,7 +18,26 @@ async function addProjectsToDom(){
   );
   // console.log(data); // array of objects
 
-  // create an li for each document and add it to the project list ul
+  // create a DIV.CARD for each document and add it to the project list div.
+  // EXAMPLE OUTPUT:
+  // <div class="card">
+    // <h4>flim</h4>
+    // <a href="http://localhost:5173/">Link to project</a>
+    // <a href="http://localhost:5173/">Link to repo</a>
+    // <p>kusdhrtikluh3w iuhfwilu ffhli</p>
+    // <h3>Stack</h3>
+    // <ul class="stack">
+      // <li>js</li>
+      // <li> vite</li>
+    // </ul>
+    // <p>Added on 2/15/2025</p>
+    // <ul class="contributors">
+      // <li></li>
+    // </ul>
+    // <ul class="type-of-project"></ul>
+    // <p>Closed for contributions</p>
+    // <p>Status: Not finished</p>
+  // </div>
   data.documents.forEach(project => {
  
     // create an element for each document
