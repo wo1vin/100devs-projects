@@ -15,7 +15,6 @@ Users can add projects to the database and browse through what others have creat
 - HTML5
 
 ### Optimizations
-- Add the functionality on the front and backend to support two new 'project' attributes: "open" and "finished." the attributes already exist in the DB and backend, but the input elements need to be added in the frontend. "Open" refers to whether the project is accepting contributions or not.
 - Allow users to log in with their GitHub account
     - Pull data directly from their github 
     - Authenticate users
