@@ -5,6 +5,7 @@
   --purple: #646cff;
   --navy: #0b273e;
   --gold: #cca701;
+  --gray: #607180;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -84,14 +85,28 @@ form{
   margin: 0 0 10px 0;
 }
 form input, form textarea{
+  color: var(--white);
   padding: 10px;
   margin: 5px 0 10px 0;
   border-radius: 10px;
   border: 1px solid var(--white);
   background-color: var(--charcoal);
 }
+fieldset{
+  margin: 10px 0;
+}
+
 div.projectType{
   margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.projectType input[type=text]{
+  margin: 0;
+}
+.projectType label{
+  padding: 5px 3px;
 }
 form #projectSubmit{
   width: 6rem;
@@ -211,7 +226,14 @@ button:focus-visible {
     color: var(--purple);
   }
   button {
-    background-color: var(--white);
+    color: var(--white);
+    background-color: var(--gray);
+  }
+  input[type=text],input[type=url],form textarea{
+    background-color: var(--gray);
+  }
+  ::placeholder{
+    color: white;
   }
 }
 @media screen and (min-width: 425px) {
@@ -221,6 +243,12 @@ button:focus-visible {
   h1{
     font-size: 1.5rem;
     width: 415px;
+  }
+  div.projectType{
+    justify-content: flex-start;
+   }
+   .projectType label {
+    padding: 0 8px;
   }
   footer p{
     margin: 0;
