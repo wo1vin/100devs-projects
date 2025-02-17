@@ -13,16 +13,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-ul{
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  color: #1a1a1a;
-}
-li{
-  padding: 0 5px;
-}
 #info,#addProject{
   display: none;
 }
@@ -90,6 +80,16 @@ form #projectSubmit{
   margin: auto;
   color: #122637;
   font-weight: 600;
+}
+ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  color: #1a1a1a;
+}
+li{
+  padding: 0 5px;
 }
 footer{
   width: 100%;

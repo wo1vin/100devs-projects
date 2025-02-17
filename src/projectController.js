@@ -16,12 +16,93 @@ async function addProjectsToDom(){
     import.meta.env.VITE_DB_ID,
     import.meta.env.VITE_PROJECTS_COL_ID
   );
+  // console.log(data); // array of objects
+
   // create an li for each document and add it to the project list ul
   data.documents.forEach(project => {
-    const li = document.createElement('li')
-    li.textContent = `${project['project-name']}`
-    projectList.appendChild(li);
-  })
+ 
+    // create an element for each document
+    const card = document.createElement('div')
+    card.classList.add('card');
+
+    // Add project name
+    const projectName = document.createElement('h4');
+    projectName.textContent = project['project-name'];
+    card.appendChild(projectName);
+
+    // Add project link
+    const projectLink = document.createElement('a');
+    projectLink.href = project['project-link'];
+    projectLink.textContent = 'Link to project';
+    card.appendChild(projectLink);
+
+    // Add GitHub link
+    const githubLink = document.createElement('a');
+    githubLink.href = project['github-link'];
+    githubLink.textContent = 'Link to repo';
+    card.appendChild(githubLink);
+
+    // Add description
+    const description = document.createElement('p');
+    description.textContent = project['description'];
+    card.appendChild(description);
+
+    // Add stack section
+    const stackHeading = document.createElement('h3');
+    stackHeading.textContent = "Stack";
+    card.appendChild(stackHeading);
+
+    const stackList = document.createElement('ul');
+    stackList.classList.add('stack');
+    project['stack'].forEach((tech) => {
+      const stackItem = document.createElement('li');
+      stackItem.textContent = tech;
+      stackList.appendChild(stackItem);
+    });
+    card.appendChild(stackList);
+
+    // Add date added
+    const dateAdded = document.createElement('p');
+    dateAdded.textContent = `Added on ${project['date-added']}`;
+    card.appendChild(dateAdded);
+
+    // Add contributors section
+    const contributorsList = document.createElement('ul');
+    contributorsList.classList.add('contributors');
+    project.contributors.forEach((contributor) => {
+      const contributorItem = document.createElement('li');
+      contributorItem.textContent = contributor;
+      contributorsList.appendChild(contributorItem);
+    });
+    card.appendChild(contributorsList);
+
+    // Add project type section 
+    // VERIFY IF THIS IS WORKING CORRECTLY
+    const projectTypeList = document.createElement('ul');
+    projectTypeList.classList.add('type-of-project');
+    project['type-of-project'].forEach((type) => {
+      const item = document.createElement('li');
+      item.textContent = type;
+      projectTypeList.appendChild(item);
+    });
+    card.appendChild(projectTypeList);
+
+    // THE FOLLOWING TWO ATTRIBUTES NEED THE PROPER INPUT ON THE FRONTEND. THEY'VE BEEN ADDED TO THE DB ATTRIBUTES | DELETE THIS IF DONE
+    // Add open/closed status
+    const collabStatus = document.createElement('p');
+    collabStatus.textContent = project['open'] == true ? 'Open for contributions' : 'Closed for contributions';
+    card.appendChild(collabStatus);
+
+    // Add finished status
+    const completionStatus = document.createElement('p');
+    completionStatus.textContent = `Status: ${project['completed'] == true ? 'Finished' : 'Not finished'}`;
+    card.appendChild(completionStatus);
+
+    // console.log(card);
+    document.getElementById('projectList').appendChild(card);
+  });
+
+
 };
 addProjectsToDom();
 
