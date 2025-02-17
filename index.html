@@ -32,9 +32,9 @@
         <label for="projectName">Project name</label>
         <input type="text" name="projectName" placeholder="Project Name" required>
         <label for="projecLink">Link to project</label>
-        <input type="url" name="projectLink">
+        <input type="url" name="projectLink" placeholder="https://myproject.netlify.app">
         <label for="githubLink">Link to repository</label>
-        <input type="url" name="githubLink" required>
+        <input type="url" name="githubLink" placeholder="https://github.com/myusername/myproject" required>
         <label for="description">Project description</label>
         <textarea name="description" placeholder="Describe your project"></textarea>
         <!-- value is split into array before sending to DB -->
@@ -43,7 +43,29 @@
         <!-- value is split into array before sending to DB -->
         <label for="contributors">Contributors</label>
         <input type="text" name="contributors" placeholder="GitHub usernames" required>
-
+        
+        <fieldset>
+          <legend>Open for contributions?</legend>
+          <div>
+            <input type="radio" name="open" value="true" checked>
+            <label for="open">Yes</label>
+          </div>
+          <div>
+            <input type="radio" name="open" value="false">
+            <label for="open">No</label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Is the project completed?</legend>
+          <div>
+            <input type="radio" name="completed" value="true" checked>
+            <label for="open">Yes</label>
+          </div>
+          <div>
+            <input type="radio" name="completed" value="false">
+            <label for="open">No</label>
+          </div>
+        </fieldset>
         <label for="projectType">Type of project</label>
         <div class="projectType">
           <label><input type="checkbox" name="projectType" value="portfolio">  Portfolio site</label><br>
