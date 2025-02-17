@@ -15,7 +15,7 @@ Users can add projects to the database and browse through what others have creat
 - HTML5
 
 ### Optimizations
-- Add the functionality on the front and backend to support two new 'product' attributes: "open" and "finished." the attributes already exist in the DB. "Open" refers to whether the project is accepting contributions or not.
+- Add the functionality on the front and backend to support two new 'project' attributes: "open" and "finished." the attributes already exist in the DB and backend, but the input elements need to be added in the frontend. "Open" refers to whether the project is accepting contributions or not.
 - Allow users to log in with their GitHub account
     - Pull data directly from their github 
     - Authenticate users
@@ -30,7 +30,7 @@ Contact me on Discord if you want access to the database. Otherwise, you will ne
 Terminal instructions:
 ```
 git clone git@github.com:wo1vin/100devs-projects.git
-git install
+npm install
 ```
 3. Create a .env file and the environment variables with the IDs from the Appwrite CLI:
 ```
