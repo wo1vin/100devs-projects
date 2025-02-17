@@ -113,9 +113,9 @@ async function addProjectsToDom(){
     links.appendChild(githubLink);
 
     // Add date added
-    const dateAdded = document.createElement('p');
-    dateAdded.textContent = `Added on ${project['date-added']}`;
-    card.appendChild(dateAdded);
+    // const dateAdded = document.createElement('p');
+    // dateAdded.textContent = `Added on ${project['date-added']}`;
+    // card.appendChild(dateAdded);
 
 
     // THE FOLLOWING TWO ATTRIBUTES NEED THE PROPER INPUT ON THE FRONTEND. THEY'VE BEEN ADDED TO THE DB ATTRIBUTES | DELETE THIS IF DONE
