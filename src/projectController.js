@@ -184,7 +184,6 @@ function getCheckboxValues(){
 // if a new project has been submitted, the DOM should be updated
 function addProject(e){
     //create new project
-    console.log(e.target)
     const project = databases.createDocument(
     import.meta.env.VITE_DB_ID,
     import.meta.env.VITE_PROJECTS_COL_ID,
@@ -196,11 +195,13 @@ function addProject(e){
         "description":e.target.description.value,
         "stack": splitByCommas(e.target.stack.value),
         "type-of-project": splitByCommas(projectType),
-        "contributors": splitByCommas(e.target.contributors.value)
+        "contributors": splitByCommas(e.target.contributors.value),
+        "open": e.target.open.value === "true" ? true : false,
+        "completed":e.target.completed.value === "true" ? true : false,
     })
     project.then (function(response) {
       addProjectsToDom()
-      console.log(response);
+      // console.log(response);
     }, function(err) {
       console.log(err);
     });
