@@ -48,6 +48,8 @@ h1 {
 /* NAV */
 #info, #addProject{
   display: none;
+  width: 100%;
+  width: -moz-available;
   width: -webkit-fill-available;
   margin: 20px 0;
   padding: 1.75em 3em;
@@ -60,7 +62,7 @@ form{
   display: flex;
   flex-direction: column;
 }
-div> h3{
+#addProject> h3{
   margin: 10px 0;
 }
 form input, form textarea{
@@ -94,16 +96,50 @@ form #projectSubmit:hover, #infoBtn:hover,#addProjectBtn:hover{
   font-weight: 600;
   letter-spacing: .1rem;
 }
-ul{
-  list-style: none;
+
+/* LIST OF PROJECTS */
+#projectList{
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.card {
+  padding: 1.25em;
+  width: max-content;
+}
+h3,div.card p{
+  text-transform: capitalize;
+  margin: 0;
+}
+div.card p{
+  font-size: .9rem;
+}
+h4{
+  margin: 10px 0 5px 0;
+}
+ul,.projectLinks{
+  list-style: none;
   padding: 0;
-  color: #1a1a1a;
+  margin: 0 0 10px 0;
+  display: flex;
 }
 li{
-  padding: 0 5px;
+  padding: .25rem 1rem;
+  margin: 0 10px 0 0;
+  background-color: #cca701;
+  color: #1a1a1a;
+  font-weight: 600;
+  border-radius: 15px;
 }
+.contributors li{
+  background-color: #00a43f;
+}
+.projectLinks{
+  flex-direction: column;
+}
+/* FOOTER */
 footer{
   width: 100%;
   min-height:fit-content;
@@ -128,10 +164,6 @@ footer{
 }
 .logo.vanilla:hover {
   filter: drop-shadow(0 0 2em #f7df1eaa);
-}
-
-.card {
-  padding: 2em;
 }
 
 .read-the-docs {

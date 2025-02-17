@@ -21,11 +21,11 @@ async function addProjectsToDom(){
   // create a DIV.CARD for each document and add it to the project list div.
   // EXAMPLE OUTPUT:
   // <div class="card">
-    // <h4>flim</h4>
+    // <h3>flim</h3>
     // <a href="http://localhost:5173/">Link to project</a>
     // <a href="http://localhost:5173/">Link to repo</a>
     // <p>kusdhrtikluh3w iuhfwilu ffhli</p>
-    // <h3>Stack</h3>
+    // <h4>Stack</h4>
     // <ul class="stack">
       // <li>js</li>
       // <li> vite</li>
@@ -45,21 +45,9 @@ async function addProjectsToDom(){
     card.classList.add('card');
 
     // Add project name
-    const projectName = document.createElement('h4');
+    const projectName = document.createElement('h3');
     projectName.textContent = project['project-name'];
     card.appendChild(projectName);
-
-    // Add project link
-    const projectLink = document.createElement('a');
-    projectLink.href = project['project-link'];
-    projectLink.textContent = 'Link to project';
-    card.appendChild(projectLink);
-
-    // Add GitHub link
-    const githubLink = document.createElement('a');
-    githubLink.href = project['github-link'];
-    githubLink.textContent = 'Link to repo';
-    card.appendChild(githubLink);
 
     // Add description
     const description = document.createElement('p');
@@ -67,7 +55,7 @@ async function addProjectsToDom(){
     card.appendChild(description);
 
     // Add stack section
-    const stackHeading = document.createElement('h3');
+    const stackHeading = document.createElement('h4');
     stackHeading.textContent = "Stack";
     card.appendChild(stackHeading);
 
@@ -80,23 +68,11 @@ async function addProjectsToDom(){
     });
     card.appendChild(stackList);
 
-    // Add date added
-    const dateAdded = document.createElement('p');
-    dateAdded.textContent = `Added on ${project['date-added']}`;
-    card.appendChild(dateAdded);
-
-    // Add contributors section
-    const contributorsList = document.createElement('ul');
-    contributorsList.classList.add('contributors');
-    project.contributors.forEach((contributor) => {
-      const contributorItem = document.createElement('li');
-      contributorItem.textContent = contributor;
-      contributorsList.appendChild(contributorItem);
-    });
-    card.appendChild(contributorsList);
-
     // Add project type section 
-    // VERIFY IF THIS IS WORKING CORRECTLY
+    const typeHeading = document.createElement('h4');
+    typeHeading.textContent = "Type of project";
+    card.appendChild(typeHeading);
+
     const projectTypeList = document.createElement('ul');
     projectTypeList.classList.add('type-of-project');
     project['type-of-project'].forEach((type) => {
@@ -106,15 +82,52 @@ async function addProjectsToDom(){
     });
     card.appendChild(projectTypeList);
 
+    // Add contributors section
+    const contributorHeading = document.createElement('h4');
+    contributorHeading.textContent = "Contributors";
+    card.appendChild(contributorHeading);
+
+    const contributorsList = document.createElement('ul');
+    contributorsList.classList.add('contributors');
+    project.contributors.forEach((contributor) => {
+      const contributorItem = document.createElement('li');
+      contributorItem.textContent = contributor;
+      contributorsList.appendChild(contributorItem);
+    });
+    card.appendChild(contributorsList);
+
+    // Add a container for links
+    const links = document.createElement('div');
+    links.classList.add('projectLinks');
+    card.appendChild(links);
+    // Add project link
+    const projectLink = document.createElement('a');
+    projectLink.href = project['project-link'];
+    projectLink.textContent = 'Link to project';
+    links.appendChild(projectLink);
+
+    // Add GitHub link
+    const githubLink = document.createElement('a');
+    githubLink.href = project['github-link'];
+    githubLink.textContent = 'Link to repo';
+    links.appendChild(githubLink);
+
+    // Add date added
+    const dateAdded = document.createElement('p');
+    dateAdded.textContent = `Added on ${project['date-added']}`;
+    card.appendChild(dateAdded);
+
+
     // THE FOLLOWING TWO ATTRIBUTES NEED THE PROPER INPUT ON THE FRONTEND. THEY'VE BEEN ADDED TO THE DB ATTRIBUTES | DELETE THIS IF DONE
     // Add open/closed status
+    
     const collabStatus = document.createElement('p');
-    collabStatus.textContent = project['open'] == true ? 'Open for contributions' : 'Closed for contributions';
+    collabStatus.textContent = `${project['open'] === true ? "Open" : "Not open"} for contributions`
     card.appendChild(collabStatus);
 
     // Add finished status
     const completionStatus = document.createElement('p');
-    completionStatus.textContent = `Status: ${project['completed'] == true ? 'Finished' : 'Not finished'}`;
+    completionStatus.textContent = project['completed'] == true ? 'Completed' : 'work in progress';
     card.appendChild(completionStatus);
 
     // console.log(card);
