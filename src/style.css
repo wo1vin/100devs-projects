@@ -157,10 +157,11 @@ ul,.projectLinks{
   padding: 0;
   margin: 0 0 10px 0;
   display: flex;
+  flex-wrap: wrap;
 }
 li{
   padding: .25rem 1rem;
-  margin: 0 10px 0 0;
+  margin: 0 6px 6px 0;
   background-color: var(--gold);
   color: var(--charcoal);
   font-weight: 600;
@@ -279,7 +280,7 @@ button:focus-visible {
     padding: 2em 15em;
    }
    #projectList{
-    padding: 2em;
+    padding: 2em 0;
    }
    .card{
     padding: 1em;
@@ -292,12 +293,8 @@ button:focus-visible {
   #addProject,#info{
     padding: 2em 30em;
    }
-   #projectList{
-    padding: 2em;
-   }
    .card{
     padding: 1em;
     width: 25%;
-    overflow: scroll;
    }
 }
